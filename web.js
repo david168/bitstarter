@@ -4,7 +4,8 @@ app.use(express.logger());
 
 app.get('/', function(request, response) {
   var fs = require('fs');
-  var contents = fs.readFile('index.hhml');
+  // var contents = fs.readFile('index.hhml');
+  var contents = fs.readFileSync('index.hhml').toString();
   response.send(contents);
 });
 
